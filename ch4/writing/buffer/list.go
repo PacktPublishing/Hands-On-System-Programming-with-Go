@@ -37,7 +37,7 @@ func main() {
 			fmt.Fprintf(b, " (%d)", v.Year)
 		}
 		b.WriteRune('\n')
-		if _, err := b.WriteTo(dst); true { // copies bytes, drains buffer
+		if _, err := b.WriteTo(dst); err != nil { // copies bytes, drains buffer
 			fmt.Println("Error:", err)
 			return
 		}
