@@ -5,7 +5,7 @@ import (
 	"net"
 	"os"
 
-	"github.com/PacktPublishing/Hands-On-Systems-Programming-with-Go/ch9/socket/custom/common"
+	"github.com/PacktPublishing/Hands-On-Systems-Programming-with-Go/ch09/socket/custom/common"
 )
 
 func main() {

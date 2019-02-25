@@ -11,7 +11,7 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/PacktPublishing/Hands-On-Systems-Programming-with-Go/ch6/advanced/state/command"
+	"github.com/PacktPublishing/Hands-On-Systems-Programming-with-Go/ch06/advanced/extend/command"
 )
 
 func init() {
@@ -28,9 +28,10 @@ func init() {
 }
 
 func main() {
-	s, w, a, b := bufio.NewScanner(os.Stdin), os.Stdout, args{}, bytes.Buffer{}
-	command.Startup(w)
-	defer command.Shutdown(w)
+	s := bufio.NewScanner(os.Stdin)
+	w := os.Stdout
+	a := argsScanner{}
+	b := bytes.Buffer{}
 	fmt.Fprint(w, "** Welcome to PseudoTerm! **\nPlease enter a command.\n")
 	for {
 		pwd, err := os.Getwd()
@@ -58,11 +59,11 @@ func main() {
 	}
 }
 
-type args []string
+type argsScanner []string
 
-func (a *args) Reset() { *a = (*a)[0:0] }
+func (a *argsScanner) Reset() { *a = (*a)[0:0] }
 
-func (a *args) Parse(r io.Reader) (extra string) {
+func (a *argsScanner) Parse(r io.Reader) (extra string) {
 	s := bufio.NewScanner(r)
 	s.Split(scanargs)
 	for s.Scan() {

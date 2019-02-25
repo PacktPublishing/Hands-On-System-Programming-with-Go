@@ -1,17 +1,23 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"io"
+	"os"
+	"os/user"
+	"path/filepath"
 
-	"github.com/PacktPublishing/Hands-On-Systems-Programming-with-Go/ch6/advanced/extend/command"
+	"github.com/PacktPublishing/Hands-On-Systems-Programming-with-Go/ch06/advanced/state/command"
 )
 
 func init() {
 	command.Register(&Stack{})
 }
 
-type Stack struct{ data []string }
+type Stack struct {
+	data []string
+}
 
 func (s *Stack) push(values ...string) {
 	s.data = append(s.data, values...)
@@ -60,4 +66,51 @@ func (s *Stack) Run(r io.Reader, w io.Writer, args ...string) (exit bool) {
 		fmt.Fprintf(w, "Got: `%s`\n", v)
 	}
 	return false
+}
+
+func (s *Stack) getPath() (string, error) {
+	u, err := user.Current()
+	if err != nil {
+		return "", err
+	}
+	return filepath.Join(u.HomeDir, ".stack"), nil
+}
+
+func (s *Stack) Startup(w io.Writer) error {
+	path, err := s.getPath()
+	if err != nil {
+		return err
+	}
+	f, err := os.Open(path)
+	if err != nil {
+		if os.IsNotExist(err) {
+			return nil
+		}
+		return err
+	}
+	defer f.Close()
+	s.data = s.data[:0]
+	scanner := bufio.NewScanner(f)
+	for scanner.Scan() {
+		s.push(string(scanner.Bytes()))
+	}
+	return nil
+}
+
+func (s *Stack) Shutdown(w io.Writer) error {
+	path, err := s.getPath()
+	if err != nil {
+		return err
+	}
+	f, err := os.OpenFile(path, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0644)
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+	for _, v := range s.data {
+		if _, err := fmt.Fprintln(f, v); err != nil {
+			return err
+		}
+	}
+	return nil
 }
