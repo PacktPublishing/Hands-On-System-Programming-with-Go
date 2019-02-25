@@ -1,0 +1,9 @@
+syntax = "proto3";
+package gen;
+
+message Character {
+    string name = 1;
+    string surname = 2;
+    string job = 3;
+    int32 year_of_birth = 4;
+}
