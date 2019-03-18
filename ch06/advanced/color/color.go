@@ -9,18 +9,18 @@ import (
 
 type color int
 
-func (c color) Open(w io.Writer) {
+func (c color) Start(w io.Writer) {
 	fmt.Fprintf(w, "\x1b[%dm", c)
 }
 
-func (c color) Close(w io.Writer) {
+func (c color) End(w io.Writer) {
 	fmt.Fprintf(w, "\x1b[%dm", 0)
 }
 
 func (c color) Fprintf(w io.Writer, format string, args ...interface{}) {
-	c.Open(w)
+	c.Start(w)
 	fmt.Fprintf(w, format, args...)
-	c.Close(w)
+	c.End(w)
 }
 
 // List of colors

@@ -31,7 +31,7 @@ func init() {
 func main() {
 	c := make(chan os.Signal, 1)
 	d := time.Second
-	signal.Notify(c, syscall.SIGHUP, syscall.SIGTERM,
+	signal.Notify(c, syscall.SIGHUP, syscall.SIGINT,
 		syscall.SIGQUIT, SIGUSR1, SIGUSR2, syscall.SIGALRM)
 	// initial load
 	if err := handleSignal(syscall.SIGHUP, &d); err != nil && !os.IsNotExist(err) {
@@ -58,7 +58,7 @@ func handleSignal(s os.Signal, d *time.Duration) error {
 		return loadSettings(d)
 	case syscall.SIGALRM:
 		return saveSettings(d)
-	case syscall.SIGTERM:
+	case syscall.SIGINT:
 		if err := saveSettings(d); err != nil {
 			log.Println("Cannot save:", err)
 			os.Exit(1)

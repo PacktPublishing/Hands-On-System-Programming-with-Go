@@ -6,7 +6,9 @@ require (
 	github.com/google/go-cmp v0.2.0 // indirect
 	github.com/mongodb/mongo-go-driver v0.3.0 // indirect
 	github.com/stretchr/testify v1.3.0 // indirect
+	github.com/tatsushid/go-fastping v0.0.0-20160109021039-d7bb493dee3e
 	github.com/tidwall/pretty v0.0.0-20180105212114-65a9db5fad51 // indirect
+	golang.org/x/net v0.0.0-20190311031020-56fb01167e7d // indirect
 	gopkg.in/mgo.v2 v2.0.0-20180705113604-9856a29383ce
 	gopkg.in/yaml.v2 v2.2.2
 )
