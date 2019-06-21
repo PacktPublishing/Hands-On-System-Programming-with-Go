@@ -2,6 +2,7 @@ module github.com/PacktPublishing/Hands-On-Systems-Programming-with-Go
 
 require (
 	github.com/agnivade/levenshtein v1.0.1
+	github.com/davecgh/go-spew v1.1.0
 	github.com/golang/protobuf v1.2.0
 	github.com/google/go-cmp v0.2.0 // indirect
 	github.com/matryer/resync v0.0.0-20161211202428-d39c09a11215
