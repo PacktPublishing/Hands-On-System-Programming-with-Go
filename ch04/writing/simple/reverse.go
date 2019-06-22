@@ -8,7 +8,7 @@ import (
 
 func main() {
 	if len(os.Args) != 3 {
-		fmt.Println("Please specify a source and a destinationfile")
+		fmt.Println("Please specify a source and a destination file")
 		return
 	}
 	src, err := os.Open(os.Args[1])

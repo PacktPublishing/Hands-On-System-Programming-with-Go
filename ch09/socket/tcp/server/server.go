@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"io"
 	"log"
 	"net"
 	"os"
@@ -37,6 +38,10 @@ func handleConn(conn net.Conn) {
 	for {
 		msg, err := r.ReadString('\n')
 		if err != nil {
+			if err == io.EOF {
+				log.Println("<-", err)
+				return
+			}
 			if nerr, ok := err.(net.Error); ok && !nerr.Temporary() {
 				log.Println("<- Network error:", err)
 				return

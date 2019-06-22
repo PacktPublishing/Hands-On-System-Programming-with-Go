@@ -31,7 +31,7 @@ func NewGenInt64(ctx context.Context) genInt64 {
 }
 
 func main() {
-	var g genInt64
+	g := NewGenInt64(context.Background())
 	for i := 0; i < 1000; i++ {
 		go func(i int) {
 			fmt.Println(i, g.Next())

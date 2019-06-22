@@ -2,29 +2,12 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"log"
 	"math/rand"
 	"net/http"
 	"sync"
 	"time"
 )
-
-type Searcher interface {
-	MakeRequest(q string) (*http.Request, error)
-	ParseResponse(r *http.Response) ([]Result, error)
-}
-
-type Result struct {
-	Title, URL string
-}
-
-type duckduckGo struct{}
-
-func (duckduckGo) MakeRequest(q string) (*http.Request, error) {
-	url := fmt.Sprintf("https://api.duckduckgo.com/?q=%s&format=json", q)
-	return http.NewRequest(http.MethodGet, url, nil)
-}
 
 func main() {
 	const addr = "localhost:8080"

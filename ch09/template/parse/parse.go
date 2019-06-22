@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	tpl, err := template.ParseGlob("ch9/template/parse/*.html")
+	tpl, err := template.ParseGlob("ch09/template/parse/*.html")
 	if err != nil {
 		log.Fatal("Error:", err)
 	}

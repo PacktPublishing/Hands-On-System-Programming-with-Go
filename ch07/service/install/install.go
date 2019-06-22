@@ -43,7 +43,7 @@ var (
 )
 
 func init() {
-	p, err := filepath.Abs(filepath.Dir(os.Args[0]))
+	p, err := filepath.Abs(os.Args[0])
 	if err != nil {
 		panic(err)
 	}
@@ -225,6 +225,7 @@ func runApp() error {
 	}
 	return nil
 }
+
 func helpApp() error {
 	fmt.Println("usage:", bin, "run|install|uninstall|status|start|stop")
 	return nil

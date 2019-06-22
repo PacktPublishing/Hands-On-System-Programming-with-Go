@@ -21,10 +21,10 @@ func (m methodHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.Handle("/path1", methodHandler{
 		http.MethodGet: http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-			fmt.Fprint(w, "Showing record")
+			fmt.Fprint(w, "Showing record\n")
 		}),
 		http.MethodPost: http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-			fmt.Fprint(w, "Updated record")
+			fmt.Fprint(w, "Updated record\n")
 		}),
 	})
 	if err := http.ListenAndServe(":3000", nil); err != nil {

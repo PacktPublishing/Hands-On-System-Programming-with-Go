@@ -12,7 +12,7 @@ import (
 
 func main() {
 	c := make(chan os.Signal)
-	signal.Notify(c, syscall.SIGTERM)
+	signal.Notify(c, syscall.SIGINT, syscall.SIGTERM)
 	f, err := os.OpenFile("file.txt", os.O_CREATE|os.O_TRUNC|os.O_WRONLY, 0644)
 	if err != nil {
 		log.Fatal(err)

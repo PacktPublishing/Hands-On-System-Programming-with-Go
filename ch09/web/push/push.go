@@ -15,7 +15,7 @@ func main() {
 		}
 		w.Header().Add("Content-Type", "text/html")
 		fmt.Fprintf(w, `<html><body><img src="%s"/>`+
-			`</body></html>`, imgPath)
+			"</body></html>\n", imgPath)
 	})
 	http.HandleFunc(imgPath, func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Add("Content-Type", "image/svg+xml")
@@ -24,7 +24,7 @@ func main() {
   <rect width="150" height="150" style="fill:blue"/>
 </svg>`)
 	})
-	if err := http.ListenAndServe(":3000", nil); err != nil {
+	if err := http.ListenAndServeTLS(":3000", "server.crt", "server.key", nil); err != nil {
 		fmt.Println(err)
 	}
 }
