@@ -1,4 +1,4 @@
-# Hands-On Systems Programming with Go 
+# Hands-On System Programming with Go 
 
 <a href="https://www.packtpub.com/application-development/hands-systems-programming-go?utm_source=github&utm_medium=repository&utm_campaign=9781789804072"><img src="https://packt-type-cloud.s3.amazonaws.com/uploads/sites/3122/2019/07/cover.png" alt="Hands-On Systems Programming with Go " height="256px" align="right"></a>
 
