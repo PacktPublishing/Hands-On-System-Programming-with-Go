@@ -7,7 +7,7 @@ import (
 	"net/rpc"
 	"os"
 
-	"github.com/PacktPublishing/Hands-On-Systems-Programming-with-Go/ch09/rpc/common"
+	"github.com/PacktPublishing/Hands-On-Systems-Programming-with-Go/Chapter09/rpc/common"
 )
 
 func main() {

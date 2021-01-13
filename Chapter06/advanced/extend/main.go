@@ -11,7 +11,7 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/PacktPublishing/Hands-On-Systems-Programming-with-Go/ch06/advanced/extend/command"
+	"github.com/PacktPublishing/Hands-On-Systems-Programming-with-Go/Chapter06/advanced/extend/command"
 )
 
 func init() {

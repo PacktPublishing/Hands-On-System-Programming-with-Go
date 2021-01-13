@@ -1,5 +1,7 @@
 module github.com/PacktPublishing/Hands-On-Systems-Programming-with-Go
 
+go 1.15
+
 require (
 	github.com/agnivade/levenshtein v1.0.1
 	github.com/davecgh/go-spew v1.1.0

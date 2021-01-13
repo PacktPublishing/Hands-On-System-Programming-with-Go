@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/PacktPublishing/Hands-On-Systems-Programming-with-Go/ch11/maps"
+	"github.com/PacktPublishing/Hands-On-Systems-Programming-with-Go/Chapter11/maps"
 )
 
 type result struct {
