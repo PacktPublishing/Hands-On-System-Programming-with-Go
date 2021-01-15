@@ -1,8 +1,3 @@
-## $5 Tech Unlocked 2021!
-[Buy and download this Book for only $5 on PacktPub.com](https://www.packtpub.com/product/hands-on-system-programming-with-go/9781789804072)
------
-*If you have read this book, please leave a review on [Amazon.com](https://www.amazon.com/gp/product/1789804078).     Potential readers can then use your unbiased opinion to help them make purchase decisions. Thank you. The $5 campaign         runs from __December 15th 2020__ to __January 13th 2021.__*
-
 # Hands-On System Programming with Go 
 
 <a href="https://www.packtpub.com/application-development/hands-systems-programming-go?utm_source=github&utm_medium=repository&utm_campaign=9781789804072"><img src="https://packt-type-cloud.s3.amazonaws.com/uploads/sites/3122/2019/07/cover.png" alt="Hands-On System Programming with Go " height="256px" align="right"></a>
