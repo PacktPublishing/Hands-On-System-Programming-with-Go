@@ -1,3 +1,15 @@
+
+### Get this product for $5
+
+<i>Packt is having its biggest sale of the year. Get this eBook or any other book, video, or course that you like just for $5 each</i>
+
+
+<b><p align='center'>[Buy now](https://packt.link/9781789804072)</p></b>
+
+
+<b><p align='center'>[Buy similar titles for just $5](https://subscription.packtpub.com/search)</p></b>
+
+
 # Hands-On System Programming with Go 
 
 <a href="https://www.packtpub.com/application-development/hands-systems-programming-go?utm_source=github&utm_medium=repository&utm_campaign=9781789804072"><img src="https://packt-type-cloud.s3.amazonaws.com/uploads/sites/3122/2019/07/cover.png" alt="Hands-On System Programming with Go " height="256px" align="right"></a>
